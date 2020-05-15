@@ -3,7 +3,7 @@
 
 """ Este código contém o ajuste de uma função logística (solução do modelo SI)
     aos dados oficiais do total de pessoas infectadas por COVID-19 no Brasil até
-    14/05/20 e plota o resultado.
+    14/05/20.
     Autor: Guilherme Ricioli Cruz <guilherme.riciolic@gmail.com>
 """
 

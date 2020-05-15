@@ -15,9 +15,11 @@ from scipy.optimize import curve_fit
 # Lendo os dados oficiais de pessoas infectadas pela COVID-19
 # (fonte: Ministério da Saúde <https://covid.saude.gov.br/>)
 # ##############################################################################
-data = np.array(pd.read_csv(r'data/infected-05-14.csv', header=None))
+data = np.array(pd.read_csv(r'data/infectados-14-05.csv', header=None))
 data = np.ndarray.flatten(data)
 days = np.arange(len(data))
+
+print(data.shape)
 
 # Definindo a função logística (solução do modelo SI - suceptíveis - infectados)
 # ##############################################################################
@@ -28,7 +30,7 @@ def logistic_func(t, alpha, gamma):
 
 # Ajustando os parâmetros 'alpha' e 'gamma' da função logística aos dados reais
 # ##############################################################################
-popt, pcov = curve_fit(logistic_func, days, data, bounds=(0,[1.,300.0]))
+popt, pcov = curve_fit(logistic_func, days, data, bounds=(0, [1.0, 300.0]))
 
 # Plotando os dados oficiais e a curva logística ajustada ao mesmos
 # ##############################################################################

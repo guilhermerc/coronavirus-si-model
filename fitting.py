@@ -19,8 +19,6 @@ data = np.array(pd.read_csv(r'data/infectados-14-05.csv', header=None))
 data = np.ndarray.flatten(data)
 days = np.arange(len(data))
 
-print(data.shape)
-
 # Definindo a função logística (solução do modelo SI - suceptíveis - infectados)
 # ##############################################################################
 def logistic_func(t, alpha, gamma):
